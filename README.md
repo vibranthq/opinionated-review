@@ -73,6 +73,8 @@ docker run -it --rm -v ${PWD}/articles:/in -v ${PWD}/dist:/out vibranthq/opinion
 docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 ```
 
+あるいは`make lint`を実行しても同様です。
+
 ## テーマ
 
 現在対応している組版スタイルのリストです。
