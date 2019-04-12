@@ -1,0 +1,13 @@
+{
+  "name": "opinionated-review",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "prh --verify --verbose articles/*.re"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prh": "^5.4.0",
+    "prh-languageserver": "^1.0.1"
+  },
+  "private": true
+}

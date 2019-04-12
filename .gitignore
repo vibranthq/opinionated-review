@@ -1,0 +1,18 @@
+# Node
+node_modules
+
+# Ruby
+.bundle
+vendor
+
+# VSCode
+.vscode
+
+# Re:VIEW
+*.html
+!_cover.html
+*.txt
+*.xml
+*.tex
+*.epub
+/dist

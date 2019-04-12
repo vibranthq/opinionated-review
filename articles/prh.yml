@@ -1,0 +1,5 @@
+# https://gist.github.com/inao/f55e8232e150aee918b9
+# from WEB+DB PRESS
+version: 1
+imports:
+  - ../prh-rules/media/techbooster.yml
