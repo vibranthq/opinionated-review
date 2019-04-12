@@ -54,6 +54,14 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 - `techbooster` [opinionated-review/themes/techbooster](https://github.com/vibranthq/opinionated-review/blob/master/opinionated-review/themes/techbooster)
 
+## ロードマップ
+
+Pull Request & Issue 大歓迎です。
+
+- 選択できるテーマの追加
+- テーマを選択するコマンドラインオプションの実装
+- EPUB 出力
+
 ## ライセンス
 
 - [Re:VIEW image for Docker](https://github.com/vvakame/docker-review) by [@vvakame](https://github.com/vvakame)
