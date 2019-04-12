@@ -61,7 +61,7 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 ## 補遺: Re:VIEW リファレンス
 
-[Re:VIEW 記法](https://github.com/kmuto/review/blob/master/doc/format.ja.md)
-[Re:VIEW catalog.yml](https://github.com/kmuto/review/blob/master/doc/catalog.ja.md)
-[Re:VIEW FAQ TeX](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-tex.html)
-[Re:VIEW FAQ Usage](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-usage.html)
+- [Re:VIEW 記法](https://github.com/kmuto/review/blob/master/doc/format.ja.md)
+- [Re:VIEW catalog.yml](https://github.com/kmuto/review/blob/master/doc/catalog.ja.md)
+- [Re:VIEW FAQ TeX](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-tex.html)
+- [Re:VIEW FAQ Usage](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-usage.html)

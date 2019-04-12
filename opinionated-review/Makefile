@@ -3,19 +3,18 @@ INDIR = ${CURDIR}/../articles
 OUTDIR = ${CURDIR}/../dist
 
 default: build
-release: build test publish
 
 build:
 	docker build -t ${IMAGE} .
 
-test:
+test: build
 	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE}
 
-test-lint:
+test-lint: build
 	docker run -it --rm -v ${INDIR}:/in ${IMAGE} lint
 
-publish:
+publish: build test test-lint
 	docker push vibranthq/opinionated-review
 
-dive:
+dive: build
 	docker run --rm -it -v ${INDIR}:/in -v ${OUTDIR}:/out --entrypoint bash ${IMAGE}
