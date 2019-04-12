@@ -9,14 +9,39 @@
 - 組版関連ファイルを`theme`単位でフォルダにまとめているので、後からのテーマの追加と切り替えが用意
 - Docker ベースのビルドにより、TeX 等の環境依存ゼロ
 
-## 使い方
+## 使い方（最速）
 
 このリポジトリをフォーク（または単にクローン）します。
 
 ```
-git clone https://github.com/vibranthq/opinionated-review new-book
-cd new-book
+➜ git clone https://github.com/vibranthq/opinionated-review book
+➜ cd book
 ```
+
+`articles/`の中にある`.re`ファイルを編集します。
+そして、`make pdf`あるいは単に`make`を実行すると`articles/*.re`の原稿が PDF になって`dist/`へ出力されます。
+
+```
+➜ make
+docker run -it --rm \
+        -v /path/to/book/articles:/in \
+        -v /path/to/book/dist:/out \
+        vibranthq/opinionated-review
+===> Using theme 'techbooster'
+===> Copying sources to the container
+===> Compiling Re:VIEW sources
+INFO: compiling preface.tex
+INFO: compiling article.tex
+INFO: compiling contributors.tex
+INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
+INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
+INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
+INFO: dvipdfmx -d 5 -z 9 __REVIEW_BOOK__.dvi
+===> Done
+ReVIEW-Template.pdf
+```
+
+## 使い方（詳細）
 
 Docker Hub から`opinionated-review`イメージを Pull します。
 
