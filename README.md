@@ -58,7 +58,7 @@ docker run -it --rm -v ${PWD}/articles:/in -v ${PWD}/dist:/out vibranthq/opinion
 
 `docker run -it --rm vibranthq/opinionated-review --help`でヘルプを表示できます。
 
-## EPUB 形式の書き出し
+### EPUB 形式の書き出し
 
 `epub`コマンドで EPUB 形式の本を書き出すことができます。
 
@@ -69,13 +69,13 @@ docker run -it --rm \
   vibranthq/opinionated-review epub
 ```
 
-## 印刷所に入稿可能な PDF への変換
+### 印刷所に入稿可能な PDF への変換
 
 `opinionated-review`は[press-ready](https://github.com/vibranthq/press-ready)に標準対応しています。
 
 `make press-ready`を実行すると、原稿データが印刷所に入稿可能な状態の PDF に変換されます。
 
-## prh による文章校正
+### prh による文章校正
 
 `lint`コマンドで[prh](https://github.com/prh/prh)による文章チェックができます。
 
@@ -91,11 +91,13 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 - `techbooster` [opinionated-review/themes/techbooster](https://github.com/vibranthq/opinionated-review/blob/master/opinionated-review/themes/techbooster)
 
-## サイズ変更
+### サイズ変更
 
-デフォルトでは A5 サイズで出力されます。サイズを変更する方法が 2 つあります。
+デフォルトでは A5 サイズで出力されます。
+サイズを変更する方法が 2 つあります。
+選べるサイズはテーマに依存しています。例えば`techbooster`テーマでは`A5`と`B5`が選べます。
 
-### 1. `opinionated-review.yml`
+#### 1. `opinionated-review.yml`
 
 `.re`ファイルがあるフォルダに`opinionated-review.yml`ファイルを作成し、内容を次のようにします。
 
@@ -103,9 +105,9 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 paper: B5
 ```
 
-### 2. コマンドラインオプション
+#### 2. コマンドラインオプション
 
-`docker run <省略> vibranthq/opinionated-review pdf --paperSize B5`のように`--paperSize`オプションで用紙サイズを指定してください。
+`docker run <省略> vibranthq/opinionated-review pdf --paperSize B5`のように`--paperSize`オプションで用紙サイズを指定できます。
 
 ## アップデート
 
@@ -119,9 +121,8 @@ docker pull vibranthq/opinionated-review
 
 Pull Request & Issue 大歓迎です。
 
-- 選択できるテーマの追加
-- テーマを選択するコマンドラインオプションの実装
-- EPUB 出力
+- プリセットテーマの追加
+- ローカルのテーマフォルダ（`sty`や`css`の集まり）を指定できるようにする
 
 ## ライセンス
 
