@@ -15,6 +15,8 @@ const OPINIONATED_CONFIG_PATH = join(ARTICLES_DIR, 'opinionated-review.yml')
 const CONFIG_MOD_PATH = join(ARTICLES_DIR, 'opinionated-review-mod.yml')
 const CONFIG_PATH = join(ARTICLES_DIR, 'config.yml')
 
+class CommandError extends Error {}
+
 function log(...obj) {
   console.log('===>', ...obj)
 }
@@ -77,11 +79,15 @@ async function buildReview(mode = 'pdf') {
     },
     cwd: ARTICLES_DIR,
   }
-  const preprocOut = await execa('rake', ['preproc'], execaArgs)
-  const reviewOut = await execa('rake', [mode], execaArgs)
-  log('Done')
+  try {
+    const preprocOut = await execa('rake', ['preproc'], execaArgs)
+    const reviewOut = await execa('rake', [mode], execaArgs)
+    log('Done')
 
-  return { reviewOut, preprocOut }
+    return { reviewOut, preprocOut }
+  } catch (err) {
+    throw new CommandError(err.stderr)
+  }
 }
 
 async function lintArticles(argv) {
