@@ -23,22 +23,19 @@
 
 ```
 ➜ make
-docker run -it --rm \
-        -v /path/to/book/articles:/in \
-        -v /path/to/book/dist:/out \
-        vibranthq/opinionated-review
 ===> Using theme 'techbooster'
 ===> Copying sources to the container
+===> paper size: A5
+===> extra config:
+ {
+  "texdocumentclass": [
+    "review-jsbook",
+    "media=print,paper=a5,serial_pagination=true,hiddenfolio=nikko-pc,openany,fontsize=9pt,baselineskip=13pt,line_length=38zw,number_of_lines=37,head_space=15mm,headsep=3mm,headheight=5mm,footskip=10mm"
+  ]
+}
 ===> Compiling Re:VIEW sources
-INFO: compiling preface.tex
-INFO: compiling article.tex
-INFO: compiling contributors.tex
-INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
-INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
-INFO: uplatex -interaction=nonstopmode -file-line-error __REVIEW_BOOK__.tex
-INFO: dvipdfmx -d 5 -z 9 __REVIEW_BOOK__.dvi
 ===> Done
-ReVIEW-Template.pdf
+===> Pushing back artifacts to the local dir
 ```
 
 ## 使い方（詳細）
@@ -49,7 +46,7 @@ Docker Hub から`opinionated-review`イメージを Pull します。
 docker pull vibranthq/opinionated-review
 ```
 
-`.re`ファイルがあるソースフォルダを`/in`に、PDF を出力したいターゲットフォルダを`/out`に指定して、`opinionated-review`を実行します。
+`.re`ファイルがあるソースフォルダを`/in`に、PDF を出力したいターゲットフォルダを`/out`に指定して、`opinionated-review pdf`を実行します。
 この例では`./articles`をソースフォルダに、`./dist`フォルダをターゲットフォルダにしています（絶対パス）。
 
 ```
@@ -58,6 +55,19 @@ docker run -it --rm -v ${PWD}/articles:/in -v ${PWD}/dist:/out vibranthq/opinion
 
 > 上記のコマンド群は`Makefile`にも定義されています。
 > 原稿データから PDF を生成したい場合は、`make pdf`あるいは単に`make`を実行してください。
+
+`docker run -it --rm vibranthq/opinionated-review --help`でヘルプを表示できます。
+
+## EPUB 形式の書き出し
+
+`epub`コマンドで EPUB 形式の本を書き出すことができます。
+
+```
+docker run -it --rm \
+  -v ${PWD}/articles:/in \
+  -v ${PWD}/dist:/out \
+  vibranthq/opinionated-review epub
+```
 
 ## 印刷所に入稿可能な PDF への変換
 
@@ -83,9 +93,23 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 ## サイズ変更
 
-デフォルトでは A5 サイズで出力されます。
+デフォルトでは A5 サイズで出力されます。サイズを変更する方法が 2 つあります。
+
+### 1. `opinionated-review.yml`
+
+`.re`ファイルがあるフォルダに`opinionated-review.yml`ファイルを作成し、内容を次のようにします。
+
+```yaml
+paper: B5
+```
+
+### 2. コマンドラインオプション
+
+`docker run <省略> vibranthq/opinionated-review pdf --paperSize B5`のように`--paperSize`オプションで用紙サイズを指定してください。
 
 ## アップデート
+
+新しいイメージを Pull することでアップデートできます。
 
 ```
 docker pull vibranthq/opinionated-review
