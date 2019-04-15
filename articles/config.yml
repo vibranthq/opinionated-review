@@ -1,14 +1,16 @@
 inherit: ['theme.yml']
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
-bookname: ReVIEW-Template
+bookname: Opinionated-ReVIEW-Template
+
+# 表紙画像
+coverimage: cover.png
 
 # 書名
-booktitle: { name: 'Re:VIEWテンプレート', file-as: 'reviewテンプレート' }
+booktitle: 'Opinionated-Re:VIEWテンプレート'
 
 # 著者名。「, 」で区切って複数指定できる
-aut: [{ name: 'TechBooster編', file-as: 'techboosterヘン' }]
-
+aut: ['Anonymous Reviewer']
 # 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
 # 読みの指定はaut:の例を参照。
@@ -29,7 +31,7 @@ aut: [{ name: 'TechBooster編', file-as: 'techboosterヘン' }]
 # a-csl, csl: 監修者
 # a-dsr, dsr: デザイナ
 # a-edt, edt: 編集者
-edt: ['mhidaka']
+edt: ['Slicked Editor']
 # a-ill, ill: イラストレータ
 # a-lyr, lyr: 歌詞作成者
 # a-mdc, mdc: メタデータセットの一次的責任者
@@ -38,7 +40,7 @@ edt: ['mhidaka']
 # a-oth, oth: その他
 # a-pht, pht: 撮影責任者
 # a-pbl, pbl: 出版社（発行所）
-pbl: TechBooster
+pbl: Super Reviewers
 # a-prt, prt: 印刷所
 # prt: TechBooster
 # a-red, red: 項目の枠組起草者
@@ -56,8 +58,8 @@ date: 2019-4-14
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
 history: [['2019-4-14 技術書典6版 v1.0.0']]
 # 権利表記(配列で複数指定可)
-# rights: (C) 2016 Re:VIEW Developers
-rights: (C) 2017-2019 TechBooster
+# rights: (C) 2016 Opinionated Re:VIEW
+rights: (C) 2017-2019 Super Reviewers
 # description: 説明
 # subject: 短い説明用タグ(配列で複数指定可)
 # type: 書籍のカテゴリーなど(配列で複数指定可)
@@ -67,7 +69,7 @@ rights: (C) 2017-2019 TechBooster
 # coverage: 内容の範囲や領域(配列で複数指定可)
 
 # 固有IDに使用するドメイン。省略した場合は時刻に基づくランダムUUIDが入る
-urnid: urn:uid:https://github.com/TechBooster/ReVIEW-Template
+urnid: urn:uid:https://github.com/vibranthq/opinionated-review
 #
 # ISBN。省略した場合はurnidが入る
 # isbn: null
