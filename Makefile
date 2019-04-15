@@ -1,27 +1,46 @@
 IMAGE = vibranthq/opinionated-review
 SOURCE_DIR = ${CURDIR}/articles
 DIST_DIR = ${CURDIR}/dist
-PRESS_READY_SOURCE = ReVIEW-Template.pdf
 PRESS_READY_DIST = ReVIEW-Template-press-ready.pdf
+
+PDF_FILE := $(firstword $(wildcard dist/*.pdf))
 
 default: pdf
 release: pdf press-ready
 
+clean:
+	rm dist/*
+
 pdf:
 	docker run -it --rm \
-	-v ${SOURCE_DIR}:/in \
-	-v ${DIST_DIR}:/out \
-	${IMAGE}
+		-v ${SOURCE_DIR}:/in \
+		-v ${DIST_DIR}:/out \
+		${IMAGE} \
+		pdf
 
-lint: pdf
+epub:
+	docker run -it --rm \
+		-v ${SOURCE_DIR}:/in \
+		-v ${DIST_DIR}:/out \
+		${IMAGE} \
+		epub
+
+lint:
+	docker run -it --rm \
+		-v ${SOURCE_DIR}:/in \
+		-v ${DIST_DIR}:/out \
+		${IMAGE} \
+		lint
+
+lint-pdf: pdf
 	docker run --rm -it \
-	-v ${DIST_DIR}:/workdir \
-	vibranthq/press-ready lint \
-	--input ./${PRESS_READY_SOURCE}
+		-v ${DIST_DIR}:/workdir \
+		vibranthq/press-ready lint \
+		--input ./$(shell basename ${PDF_FILE})
 
 press-ready: pdf
 	docker run --rm -it \
-	-v ${DIST_DIR}:/workdir \
-	vibranthq/press-ready \
-	--input ./${PRESS_READY_SOURCE} \
-	--output ./${PRESS_READY_DIST}
+		-v ${DIST_DIR}:/workdir \
+		vibranthq/press-ready \
+		--input ./$(shell basename ${PDF_FILE}) \
+		--output ./${PRESS_READY_DIST}

@@ -1,18 +1,25 @@
 FROM vvakame/review:3.1
 
 ENV CI true
-ENV PATH /app:$PATH
-ENV REVIEW_CONFIG_FILE config.yml
 
-# review
 WORKDIR /app
-COPY sources/* /app/
-RUN yarn && bundle install
 
 # prh
 RUN git clone https://github.com/prh/rules.git prh-rules
 
+# review
+COPY Gemfile /app/
+RUN bundle install
+
+# opinionated-review
+COPY package.json /app/
+RUN yarn && yarn link
+COPY src /app/src
+
+# assets
+COPY assets /app/assets
+
 # theme
 COPY themes /app/themes
 
-CMD ["generate-pdf"]
+ENTRYPOINT ["opinionated-review"]

@@ -81,6 +81,16 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 - `techbooster` [opinionated-review/themes/techbooster](https://github.com/vibranthq/opinionated-review/blob/master/opinionated-review/themes/techbooster)
 
+## サイズ変更
+
+デフォルトでは A5 サイズで出力されます。
+
+## アップデート
+
+```
+docker pull vibranthq/opinionated-review
+```
+
 ## ロードマップ
 
 Pull Request & Issue 大歓迎です。

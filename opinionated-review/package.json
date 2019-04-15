@@ -1,0 +1,19 @@
+{
+  "name": "opinionated-review",
+  "main": "src/cli.js",
+  "scripts": {
+    "lint": "prh --verify --verbose articles/*.re",
+    "rebuild-styles": "node-sass ./articles/ --output ./articles/"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "js-yaml": "^3.13.1",
+    "recursive-copy": "^2.0.10",
+    "yargs": "^13.2.2",
+    "prh": "^5.4.0",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {},
+  "bin": "src/cli.js",
+  "private": true
+}

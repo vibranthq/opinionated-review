@@ -1,0 +1,73 @@
+inherit: ['theme.yml']
+
+# ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
+bookname: ReVIEW-Template
+
+# 書名
+booktitle: { name: 'Re:VIEWテンプレート', file-as: 'reviewテンプレート' }
+
+# 著者名。「, 」で区切って複数指定できる
+aut: [{ name: 'TechBooster編', file-as: 'techboosterヘン' }]
+
+# 以下はオプション
+# 以下はオプション(autと同じように配列書式で複数指定可能)。
+# 読みの指定はaut:の例を参照。
+# a-が付いているものはcreator側、
+# 付いていないものはcontributor側(二次協力者)に入る
+# a-adp, adp: 異なるメディア向けに作り直した者
+# a-ann, ann: 注釈記述者
+# a-arr, arr: アレンジした者
+# a-art, art: グラフィックデザインおよび芸術家
+# a-asn, asn: 関連・かつての所有者・関係者
+# a-aqt, aqt: 大きく引用された人物
+# a-aft, aft: 後書き・奥付の責任者
+# a-aui, aui: 序論・序文・前書きの責任者
+# a-ant, ant: 目録責任者
+# a-bkp, bkp: メディア制作責任者
+# a-clb, clb: 限定参加または補足者
+# a-cmm, cmm: 解釈・分析・考察者
+# a-csl, csl: 監修者
+# a-dsr, dsr: デザイナ
+# a-edt, edt: 編集者
+edt: ['mhidaka']
+# a-ill, ill: イラストレータ
+# a-lyr, lyr: 歌詞作成者
+# a-mdc, mdc: メタデータセットの一次的責任者
+# a-mus, mus: 音楽家
+# a-nrt, nrt: 語り手
+# a-oth, oth: その他
+# a-pht, pht: 撮影責任者
+# a-pbl, pbl: 出版社（発行所）
+pbl: TechBooster
+# a-prt, prt: 印刷所
+# prt: TechBooster
+# a-red, red: 項目の枠組起草者
+# a-rev, rev: 評論者
+# a-spn, spn: 援助者
+# a-ths, ths: 監督者
+# a-trc, trc: 筆記・タイプ作業者
+# a-trl, trl: 翻訳者
+
+# 刊行日(省略した場合は実行時の日付)
+date: 2019-4-14
+# 発行年月。YYYY-MM-DD形式による配列指定。省略した場合はdateを使用する
+# 複数指定する場合は次のように記述する
+# [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
+# 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
+history: [['2019-4-14 技術書典6版 v1.0.0']]
+# 権利表記(配列で複数指定可)
+# rights: (C) 2016 Re:VIEW Developers
+rights: (C) 2017-2019 TechBooster
+# description: 説明
+# subject: 短い説明用タグ(配列で複数指定可)
+# type: 書籍のカテゴリーなど(配列で複数指定可)
+# format: メディアタイプおよび特徴(配列で複数指定可)
+# source: 出版物生成の重要なリソース情報(配列で複数指定可)
+# relation: 補助的リソース(配列で複数指定可)
+# coverage: 内容の範囲や領域(配列で複数指定可)
+
+# 固有IDに使用するドメイン。省略した場合は時刻に基づくランダムUUIDが入る
+urnid: urn:uid:https://github.com/TechBooster/ReVIEW-Template
+#
+# ISBN。省略した場合はurnidが入る
+# isbn: null

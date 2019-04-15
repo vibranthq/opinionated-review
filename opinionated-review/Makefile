@@ -7,13 +7,16 @@ default: build
 build:
 	docker build -t ${IMAGE} .
 
-test: build
-	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE}
+test-pdf: build
+	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf
+
+test-epub: build
+	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
 
 test-lint: build
 	docker run -it --rm -v ${INDIR}:/in ${IMAGE} lint
 
-publish: build test test-lint
+publish: build test-pdf test-epub test-lint
 	docker push vibranthq/opinionated-review
 
 dive: build
