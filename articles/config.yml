@@ -1,13 +1,13 @@
 inherit: ['theme.yml']
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
-bookname: Opinionated-ReVIEW-Template
+bookname: opinionated-review-book
 
 # 表紙画像
 coverimage: cover.png
 
 # 書名
-booktitle: 'Opinionated-Re:VIEWテンプレート'
+booktitle: 'Opinionated Re:VIEW'
 
 # 著者名。「, 」で区切って複数指定できる
 aut: ['Anonymous Reviewer']
