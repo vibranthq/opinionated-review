@@ -3,23 +3,31 @@ const {
   pullArticles,
   preprocessConfigFiles,
   buildReview,
+  buildMobi,
   pushArticles,
+  log,
 } = require('../util')
 
-async function generateEPUB(argv) {
+async function generateKindle(argv) {
   await copyTheme(argv.theme)
   await pullArticles()
+
+  // epub
   await preprocessConfigFiles('epub', argv.paperSize)
   await buildReview('epub')
-  await pushArticles(['*.epub'])
+
+  // epub to mobi
+  const out = await buildMobi()
+  log('Log', out)
+  await pushArticles(['*.mobi'])
 }
 
-exports.command = 'epub'
-exports.desc = 'Create an EPUB'
+exports.command = 'kindle'
+exports.desc = 'Create an Kindle book'
 exports.builder = {
   paperSize: {},
   theme: {
     default: 'techbooster',
   },
 }
-exports.handler = generateEPUB
+exports.handler = generateKindle

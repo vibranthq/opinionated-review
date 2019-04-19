@@ -17,6 +17,10 @@ const CONFIG_PATH = join(ARTICLES_DIR, 'config.yml')
 
 class CommandError extends Error {}
 
+function loadConfig() {
+  return loadYAML(CONFIG_PATH)
+}
+
 function log(...obj) {
   console.log('===>', ...obj)
 }
@@ -42,10 +46,10 @@ async function pullArticles() {
   })
 }
 
-async function pushArticles() {
+async function pushArticles(filter) {
   log('Pushing back artifacts to the local dir')
   await recursiveCopy(ARTICLES_DIR, OUTPUT_DIR, {
-    filter: ['*.pdf', '*.epub'],
+    filter,
     overwrite: true,
   })
 }
@@ -90,6 +94,28 @@ async function buildReview(mode = 'pdf') {
   }
 }
 
+async function buildMobi() {
+  log('Building .mobi using kindlegen')
+
+  const config = loadYAML(CONFIG_PATH)
+  const epubPath = join(ARTICLES_DIR, config.bookname + '.epub')
+  const mobiPath = join(ARTICLES_DIR, config.bookname + '.mobi')
+
+  try {
+    const kindlegenOut = await execa('kindlegen', [epubPath], {
+      cwd: ARTICLES_DIR,
+    })
+    log('Done')
+
+    return kindlegenOut.stdout
+  } catch (err) {
+    if (!fs.existsSync(mobiPath)) {
+      throw new CommandError(err.stdout)
+    }
+    return err.stdout
+  }
+}
+
 async function lintArticles(argv) {
   log('Linting Re:VIEW articles')
   await fse.copy(
@@ -102,6 +128,7 @@ async function lintArticles(argv) {
 
 module.exports = {
   log,
+  loadConfig,
   loadYAML,
   saveYAML,
   copyTheme,
@@ -109,5 +136,6 @@ module.exports = {
   pushArticles,
   preprocessConfigFiles,
   buildReview,
+  buildMobi,
   lintArticles,
 }

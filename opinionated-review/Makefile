@@ -13,6 +13,9 @@ test-pdf: build
 test-epub: build
 	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
 
+test-kindle: build
+	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} kindle
+
 test-lint: build
 	docker run -it --rm -v ${INDIR}:/in ${IMAGE} lint
 

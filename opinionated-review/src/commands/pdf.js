@@ -7,11 +7,11 @@ const {
 } = require('../util')
 
 async function generatePDF(argv) {
-  await copyTheme('techbooster')
+  await copyTheme(argv.theme)
   await pullArticles()
   await preprocessConfigFiles('pdf', argv.paperSize)
   await buildReview('pdf')
-  await pushArticles()
+  await pushArticles(['*.pdf'])
 }
 
 exports.command = 'pdf'
