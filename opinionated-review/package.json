@@ -8,10 +8,10 @@
   "dependencies": {
     "fs-extra": "^7.0.1",
     "js-yaml": "^3.13.1",
-    "recursive-copy": "^2.0.10",
-    "yargs": "^13.2.2",
+    "node-sass": "^4.12.0",
     "prh": "^5.4.0",
-    "node-sass": "^4.11.0"
+    "recursive-copy": "^2.0.10",
+    "yargs": "^13.2.2"
   },
   "devDependencies": {},
   "bin": "src/cli.js",
