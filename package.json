@@ -6,7 +6,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "prh": "^5.4.0",
+    "prh": "^5.4.4",
     "prh-languageserver": "^1.0.1"
   },
   "private": true
