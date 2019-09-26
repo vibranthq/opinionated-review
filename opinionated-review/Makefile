@@ -10,6 +10,9 @@ build:
 test-pdf: build
 	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf
 
+test-pdf-ebook: build
+	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf-ebook
+
 test-epub: build
 	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
 

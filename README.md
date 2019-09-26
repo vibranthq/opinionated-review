@@ -69,6 +69,17 @@ docker run -it --rm \
   vibranthq/opinionated-review epub
 ```
 
+### PDF (eBook) 形式の書き出し
+
+`pdf-ebook`コマンドで eBook 向けの PDF を書き出すことができます。
+
+```
+docker run -it --rm \
+  -v ${PWD}/articles:/in \
+  -v ${PWD}/dist:/out \
+  vibranthq/opinionated-review pdf-ebook
+```
+
 ### 印刷所に入稿可能な PDF への変換
 
 `opinionated-review`は[press-ready](https://github.com/vibranthq/press-ready)に標準対応しています。

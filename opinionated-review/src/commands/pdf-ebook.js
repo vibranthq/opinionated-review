@@ -9,13 +9,13 @@ const {
 async function generatePDF(argv) {
   await copyTheme(argv.theme);
   await pullArticles();
-  await preprocessConfigFiles('pdf', argv.paperSize);
+  await preprocessConfigFiles('pdf-ebook', argv.paperSize);
   await buildReview('pdf');
   await pushArticles(['*.pdf']);
 }
 
-exports.command = 'pdf';
-exports.desc = 'Create an PDF';
+exports.command = 'pdf-ebook';
+exports.desc = 'Create an PDF (eBook)';
 exports.builder = {
   paperSize: {},
   theme: {
