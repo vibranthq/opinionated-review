@@ -1,5 +1,5 @@
 %#!ptex2pdf -l -u -ot '-synctex=1' test-rejsbk
-% Copyright (c) 2018 Munehiro Yamamoto, Kenshi Muto.
+% Copyright (c) 2018-2019 Munehiro Yamamoto, Kenshi Muto.
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -148,7 +148,7 @@
   \xdef#1{\ifx\recls@hiddenfolio\@empty tombo,\fi#1}}
 
 %% \recls@set@hiddenfolio{<preset>}
-%% <preset>: default, marusho-ink (丸正インキ), nikko-pc (日光企画), 
+%% <preset>: default, marusho-ink (丸正インキ), nikko-pc (日光企画),
 %%    shippo (ねこのしっぽ)
 \def\recls@set@hiddenfolio#1{\ifx#1\@empty\else
   \@ifundefined{@makehiddenfolio@#1}{%
@@ -458,8 +458,8 @@
 
 %% シンプルな通しノンブル
 \ifrecls@serialpage
-\renewcommand*{\pagenumbering}[1]{%
-  \gdef\thepage{\@arabic\c@page}}
+\def\pagenumbering#1{%
+  \gdef\thepage{\csname @arabic\endcsname\c@page}}
 \fi
 
 %% 開始ページを変更
