@@ -2,6 +2,7 @@ name: Build
 on: [push]
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: vibranthq/build-review@master
