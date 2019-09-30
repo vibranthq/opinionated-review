@@ -9,4 +9,4 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: Draft
-          path: ./dist/ReVIEW-Template-press-ready.pdf
+          path: ./dist/opinionated-review-book.pdf
