@@ -1,0 +1,17 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: vibranthq/build-review@master
+        with:
+          format: pdf
+      - uses: vibranthq/build-review@master
+        with:
+          format: epub
+      - uses: actions/upload-artifact@master
+        with:
+          name: Artifacts
+          path: ./dist
