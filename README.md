@@ -10,7 +10,7 @@
 - 原稿データ（`.re`, `images`）と組版ファイル（`.sty`, `.css`等）を分離し、原稿の執筆に集中できる環境を構築する
 - 組版関連ファイルを`theme`単位でフォルダにまとめているので、後からのテーマの追加と切り替えが容易
 - Docker ベースのビルドにより、TeX 等の環境依存ゼロ
-- GitHub Action による自動ビルド
+- GitHub Actions による自動ビルド
 
 ## 使い方（最速）
 
@@ -101,9 +101,24 @@ docker run -it --rm -v ${PWD}/articles:/in vibranthq/opinionated-review lint
 
 ## テーマ
 
+### ビルトインテーマ
+
 現在対応している組版スタイルのリストです。
 
 - `techbooster` [opinionated-review/themes/techbooster](https://github.com/vibranthq/opinionated-review/blob/master/opinionated-review/themes/techbooster)
+
+`opinionated-review`に`--theme=<theme>`オプションを渡すことで使用できます。
+
+```
+docker run -it --rm \
+  -v ${PWD}/articles:/in \
+  -v ${PWD}/dist:/out \
+  vibranthq/opinionated-review pdf --theme=techbooster
+```
+
+### カスタムテーマ
+
+`opinionated-review`に`--theme=<path/to/theme>`オプションを渡すことでカスタムテーマを使用できます。
 
 ### サイズ変更
 
