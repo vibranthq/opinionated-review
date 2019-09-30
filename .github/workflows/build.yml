@@ -1,0 +1,7 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@master
+      - uses: vibranthq/build-review@master
