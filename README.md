@@ -1,5 +1,7 @@
 # opinionated-review
 
+[![Actions Status](https://github.com/vibranthq/opinionated-review/workflows/Build/badge.svg)](https://github.com/vibranthq/opinionated-review/actions)
+
 ゼロコンフィグで Re:VIEW 原稿を PDF に変換できる Opinionated な Re:VIEW ビルダーです。
 
 ## 主要なポイント
