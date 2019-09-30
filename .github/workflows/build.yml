@@ -6,3 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: vibranthq/build-review@master
+      - uses: actions/upload-artifact@master
+        with:
+          name: Draft
+          path: ./dist/ReVIEW-Template-press-ready.pdf
