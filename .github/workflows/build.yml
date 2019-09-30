@@ -11,5 +11,5 @@ jobs:
           dist: ./dist
       - uses: actions/upload-artifact@master
         with:
-          name: artifact
+          name: Artifacts
           path: ./dist

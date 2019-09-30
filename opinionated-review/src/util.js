@@ -33,9 +33,12 @@ function saveYAML(savePath, obj) {
   return fs.writeFileSync(savePath, yaml.safeDump(obj));
 }
 
-async function copyTheme(themeName) {
-  log(`Using theme '${themeName}'`);
-  await fse.copy(join(THEME_DIR, themeName), ARTICLES_DIR);
+async function copyTheme(themePath) {
+  log(`Using theme '${themePath}'`);
+  if (!fs.existsSync(themePath)) {
+    themePath = join(THEME_DIR, themePath);
+  }
+  await fse.copy(themePath, ARTICLES_DIR);
 }
 
 async function pullArticles() {
