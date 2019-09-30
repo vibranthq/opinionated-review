@@ -1,4 +1,4 @@
-IMAGE = vibranthq/opinionated-review
+IMAGE = vibranthq/opinionated-review:1.0
 INDIR = ${CURDIR}/../articles
 OUTDIR = ${CURDIR}/../dist
 
@@ -23,7 +23,7 @@ test-lint: build
 	docker run -it --rm -v ${INDIR}:/in ${IMAGE} lint
 
 publish: build test-pdf test-epub test-lint
-	docker push vibranthq/opinionated-review
+	docker push ${IMAGE}
 
 dive: build
 	docker run --rm -it -v ${INDIR}:/in -v ${OUTDIR}:/out --entrypoint bash ${IMAGE}

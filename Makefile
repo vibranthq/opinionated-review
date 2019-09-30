@@ -1,4 +1,4 @@
-IMAGE = vibranthq/opinionated-review
+IMAGE = vibranthq/opinionated-review:latest
 SOURCE_DIR = ${CURDIR}/articles
 DIST_DIR = ${CURDIR}/dist
 PRESS_READY_DIST = ReVIEW-Template-press-ready.pdf
