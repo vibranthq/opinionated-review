@@ -7,8 +7,10 @@ jobs:
       - uses: actions/checkout@master
       - uses: vibranthq/build-review@master
         with:
-          build: ./articles
-          dist: ./dist
+          format: pdf
+      - uses: vibranthq/build-review@master
+        with:
+          format: epub
       - uses: actions/upload-artifact@master
         with:
           name: Artifacts
