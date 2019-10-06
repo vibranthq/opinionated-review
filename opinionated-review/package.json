@@ -5,7 +5,7 @@
     "rebuild-styles": "node-sass ./articles/ --output ./articles/"
   },
   "dependencies": {
-    "execa": "^2.0.4",
+    "execa": "^2.0.5",
     "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.1",
     "node-sass": "^4.12.0",
