@@ -8,3 +8,7 @@ jobs:
     run-on: Ubuntu-latest
     steps:
       - run: shipjs prepare
+  debug:
+    run-on: Ubuntu-latest
+    steps:
+      - run: echo ${{ toJSON(github.event.comment) }}
