@@ -12,5 +12,8 @@ jobs:
     runs-on: Ubuntu-latest
     steps:
       - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.event_name == 'issue_comment' }}
       - run: echo ${{ github.event.comment.author_association }}
+      - run: echo ${{ github.event.comment.author_association == 'OWNER' }}
+      - run: echo ${{ github.event.comment.body }}
       - run: echo ${{ startsWith(github.event.comment.body, '@shipjs prepare') }}
