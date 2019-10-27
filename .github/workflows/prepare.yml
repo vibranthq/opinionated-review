@@ -11,4 +11,4 @@ jobs:
   debug:
     runs-on: Ubuntu-latest
     steps:
-      - run: echo ${{ toJSON(github.event.comment) }}
+      - run: echo ${{ github.event.comment.body }}
