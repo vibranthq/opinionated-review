@@ -146,6 +146,28 @@ paper: B5
 docker pull vibranthq/opinionated-review
 ```
 
+## GitHub Actions
+
+```yaml
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: vibranthq/build-review@v1
+        with:
+          format: pdf
+      - uses: vibranthq/build-review@v1
+        with:
+          format: epub
+      - uses: actions/upload-artifact@master
+        with:
+          name: Artifacts
+          path: ./dist
+```
+
 ## ロードマップ
 
 Pull Request & Issue 大歓迎です。
