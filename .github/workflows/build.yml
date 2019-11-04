@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build
-        run: make
+      - name: Build PDF
+        run: make epub
+      - name: Build EPUB
+        run: make epub
       - uses: actions/upload-artifact@master
         with:
           name: Artifacts
