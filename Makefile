@@ -12,7 +12,7 @@ clean:
 	rm dist/*
 
 pdf:
-	docker run -it --rm \
+	docker run -t --rm \
 		-v ${SOURCE_DIR}:/in \
 		-v ${DIST_DIR}:/out \
 		${IMAGE} \
