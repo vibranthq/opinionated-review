@@ -5,12 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: vibranthq/build-review@v1
-        with:
-          format: pdf
-      - uses: vibranthq/build-review@v1
-        with:
-          format: epub
+      - name: Build
+        run: make
       - uses: actions/upload-artifact@master
         with:
           name: Artifacts
