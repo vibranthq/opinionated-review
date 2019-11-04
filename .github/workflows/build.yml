@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build PDF
-        run: make epub
+        run: make pdf
       - name: Build EPUB
         run: make epub
       - uses: actions/upload-artifact@master
