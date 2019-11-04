@@ -8,19 +8,19 @@ build:
 	docker build -t ${IMAGE} .
 
 test-pdf: build
-	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf
+	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf
 
 test-pdf-ebook: build
-	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf-ebook
+	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} pdf-ebook
 
 test-epub: build
-	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
+	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
 
 test-kindle: build
-	docker run -it --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} kindle
+	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} kindle
 
 test-lint: build
-	docker run -it --rm -v ${INDIR}:/in ${IMAGE} lint
+	docker run -t --rm -v ${INDIR}:/in ${IMAGE} lint
 
 publish: build test-pdf test-epub test-lint
 	docker push ${IMAGE}
