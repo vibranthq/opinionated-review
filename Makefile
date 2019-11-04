@@ -19,27 +19,27 @@ pdf:
 		pdf
 
 epub:
-	docker run -it --rm \
+	docker run -t --rm \
 		-v ${SOURCE_DIR}:/in \
 		-v ${DIST_DIR}:/out \
 		${IMAGE} \
 		epub
 
 lint:
-	docker run -it --rm \
+	docker run -t --rm \
 		-v ${SOURCE_DIR}:/in \
 		-v ${DIST_DIR}:/out \
 		${IMAGE} \
 		lint
 
 lint-pdf: pdf
-	docker run --rm -it \
+	docker run -t --rm \
 		-v ${DIST_DIR}:/workdir \
 		vibranthq/press-ready lint \
 		--input ./$(shell basename ${PDF_FILE})
 
 press-ready: pdf
-	docker run --rm -it \
+	docker run -t --rm \
 		-v ${DIST_DIR}:/workdir \
 		vibranthq/press-ready \
 		--input ./$(shell basename ${PDF_FILE}) \
