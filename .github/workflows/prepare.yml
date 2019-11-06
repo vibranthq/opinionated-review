@@ -13,7 +13,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - uses: geertvdc/setup-hub@master
-      - run: |
+      - name: Setup shipjs
+        run: |
           cd $HOME
           git clone https://github.com/algolia/shipjs
           cd shipjs
@@ -22,7 +23,8 @@ jobs:
           yarn install
           yarn global add file:$PWD
           echo "::add-path::$HOME/.yarn/bin"
-      - run: |
+      - name: Prepare
+        run: |
           git config user.name "Yasuaki Uechi"
           git config user.email "y@uechi.io"
           git checkout master
