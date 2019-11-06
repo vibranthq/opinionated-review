@@ -10,13 +10,22 @@ jobs:
       startsWith(github.event.comment.body, '@shipjs prepare')
     runs-on: Ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - uses: geertvdc/setup-hub@master
+      - run: |
+          cd $HOME
+          git clone https://github.com/algolia/shipjs
+          cd shipjs
+          git checkout fix/gh-action
+          cd packages/shipjs
+          yarn install
+          yarn global add file:$PWD
+          echo "::add-path::$HOME/.yarn/bin"
       - run: |
           git config user.name "Yasuaki Uechi"
           git config user.email "y@uechi.io"
-      - run: npm i -g shipjs
-      - run: shipjs prepare
+          git checkout master
+          shipjs prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
