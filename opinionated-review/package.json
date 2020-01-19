@@ -8,7 +8,7 @@
     "execa": "^4.0.0",
     "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prh": "^5.4.4",
     "recursive-copy": "^2.0.10",
     "yargs": "^15.1.0"
