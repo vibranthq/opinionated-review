@@ -66,9 +66,6 @@ rights: (C) 2017-2019 TechBooster
 # relation: 補助的リソース(配列で複数指定可)
 # coverage: 内容の範囲や領域(配列で複数指定可)
 
-# デバッグフラグ。nullでないときには一時ファイルをカレントディレクトリに作成し、削除もしない
-debug: null
-
 # 固有IDに使用するドメイン。省略した場合は時刻に基づくランダムUUIDが入る
 urnid: urn:uid:https://github.com/TechBooster/ReVIEW-Template
 #
