@@ -1,4 +1,4 @@
-IMAGE = vibranthq/opinionated-review:2.0
+IMAGE = vibranthq/opinionated-review
 INDIR = ${CURDIR}/../articles
 OUTDIR = ${CURDIR}/../dist
 

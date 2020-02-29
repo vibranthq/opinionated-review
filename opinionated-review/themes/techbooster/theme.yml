@@ -22,10 +22,10 @@ bookname: ReVIEW-Template
 language: ja
 
 # 書名
-booktitle: {name: 'Re:VIEWテンプレート', file-as: 'reviewテンプレート'}
+booktitle: {name: "Re:VIEWテンプレート", file-as: "reviewテンプレート"}
 
 # 著者名。「, 」で区切って複数指定できる
-aut: [{name: 'TechBooster編', file-as: 'techboosterヘン'}]
+aut: [{name: "TechBooster編", file-as: "techboosterヘン"}]
 
 # 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
@@ -47,7 +47,7 @@ aut: [{name: 'TechBooster編', file-as: 'techboosterヘン'}]
 # a-csl, csl: 監修者
 # a-dsr, dsr: デザイナ
 # a-edt, edt: 編集者
-edt: ['mhidaka']
+edt: ["mhidaka"]
 # a-ill, ill: イラストレータ
 # a-lyr, lyr: 歌詞作成者
 # a-mdc, mdc: メタデータセットの一次的責任者
@@ -72,7 +72,7 @@ date: 2019-4-14
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [['2019-9-22 技術書典7版 v1.0.0']]
+history: [["2019-9-22 技術書典7版 v1.0.0"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016 Re:VIEW Developers
 rights: (C) 2017-2019 TechBooster
@@ -97,7 +97,7 @@ urnid: urn:uid:https://github.com/TechBooster/ReVIEW-Template
 htmlext: html
 #
 # CSSファイル(配列で複数指定可、yamlファイルおよびRe:VIEWファイルを置いたディレクトリにあること)
-stylesheet: ['style.css']
+stylesheet: ["style.css"]
 
 # ePUBのバージョン (2か3)
 epubversion: 3
@@ -223,7 +223,7 @@ colophon: true
 # dvipng_cmd: "dvipng -T tight -z 9 -p %p -l %p -o %o %i"
 
 # EPUBにおけるページ送りの送り方向、page-progression-directionの値("ltr"|"rtl"|"default")
-direction: 'ltr'
+direction: "ltr"
 
 # EPUBのOPFへの固有の追加ルール
 # <package>要素に追加する名前空間
@@ -241,7 +241,7 @@ direction: 'ltr'
 epubmaker:
   # HTMLファイルの拡張子
   htmlext: xhtml
-  stylesheet: ['style.css', 'epub_style.css']
+  stylesheet: ["style.css","epub_style.css"]
   #
   # 目次を要素の階層表現にしない。省略した場合(null)は階層化する。
   # 特に部扉が入るなどの理由で、構成によっては階層化目次でepubcheckに
@@ -312,7 +312,7 @@ epubmaker:
   # epubmaker:階層を使うものはここまで
 
 # LaTeX用のスタイルファイル(styディレクトリ以下に置くこと)
-texstyle: ['reviewmacro']
+texstyle: ["reviewmacro"]
 #
 # LaTeX用のdocumentclassを指定する
 # オプションについてはsty/README.mdを参照
@@ -415,4 +415,4 @@ pdfmaker:
 # という構成にする必要がある(インデントさせる)
 #
 webmaker:
-  stylesheet: ['style.css', 'style-web.css']
+    stylesheet: ["style.css","style-web.css"]

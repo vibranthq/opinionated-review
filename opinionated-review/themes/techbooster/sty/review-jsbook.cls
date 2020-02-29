@@ -148,7 +148,7 @@
   \xdef#1{\ifx\recls@hiddenfolio\@empty tombo,\fi#1}}
 
 %% \recls@set@hiddenfolio{<preset>}
-%% <preset>: default, marusho-ink (丸正インキ), nikko-pc (日光企画),
+%% <preset>: default, marusho-ink (丸正インキ), nikko-pc (日光企画), 
 %%    shippo (ねこのしっぽ)
 \def\recls@set@hiddenfolio#1{\ifx#1\@empty\else
   \@ifundefined{@makehiddenfolio@#1}{%
