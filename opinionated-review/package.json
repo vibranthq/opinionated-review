@@ -11,7 +11,7 @@
     "node-sass": "^4.13.1",
     "prh": "^5.4.4",
     "recursive-copy": "^2.0.10",
-    "yargs": "^15.1.0"
+    "yargs": "^15.3.1"
   },
   "devDependencies": {},
   "main": "src/cli.js",
