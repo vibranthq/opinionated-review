@@ -1,4 +1,5 @@
 {
+  "name": "opinionated-review",
   "version": "2.0",
-  "devDependencies": {}
+  "private": true
 }
