@@ -16,13 +16,12 @@ test-pdf-ebook: build
 test-epub: build
 	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} epub
 
-test-kindle: build
-	docker run -t --rm -v ${INDIR}:/in -v ${OUTDIR}:/out ${IMAGE} kindle
-
 test-lint: build
 	docker run -t --rm -v ${INDIR}:/in ${IMAGE} lint
 
-publish: build test-pdf test-epub test-lint
+test: test-pdf test-pdf-ebook test-epub test-lint
+
+publish: build test
 	docker push ${IMAGE}
 
 dive: build

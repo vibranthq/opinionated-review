@@ -97,28 +97,6 @@ async function buildReview(mode = 'pdf') {
   }
 }
 
-async function buildMobi() {
-  log('Building .mobi using kindlegen');
-
-  const config = loadYAML(CONFIG_PATH);
-  const epubPath = join(ARTICLES_DIR, config.bookname + '.epub');
-  const mobiPath = join(ARTICLES_DIR, config.bookname + '.mobi');
-
-  try {
-    const kindlegenOut = await execa('kindlegen', [epubPath], {
-      cwd: ARTICLES_DIR,
-    });
-    log('Done');
-
-    return kindlegenOut.stdout;
-  } catch (err) {
-    if (!fs.existsSync(mobiPath)) {
-      throw new CommandError(err.stdout);
-    }
-    return err.stdout;
-  }
-}
-
 async function lintArticles(argv) {
   log('Linting Re:VIEW articles');
   await fse.copy(
@@ -139,6 +117,5 @@ module.exports = {
   pushArticles,
   preprocessConfigFiles,
   buildReview,
-  buildMobi,
   lintArticles,
 };
