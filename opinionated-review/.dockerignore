@@ -3,3 +3,4 @@
 .env
 .envrc
 node_modules
+vendor

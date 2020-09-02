@@ -4,22 +4,22 @@ const {
   preprocessConfigFiles,
   buildReview,
   pushArticles,
-} = require('../util');
+} = require("../util");
 
 async function generatePDF(argv) {
   await copyTheme(argv.theme);
   await pullArticles();
-  await preprocessConfigFiles('pdf-ebook', argv.paperSize);
-  await buildReview('pdf');
-  await pushArticles(['*.pdf']);
+  await preprocessConfigFiles("pdf-ebook", argv.paperSize);
+  await buildReview("pdf");
+  await pushArticles(["*.pdf"]);
 }
 
-exports.command = 'pdf-ebook';
-exports.desc = 'Create an PDF (eBook)';
+exports.command = "pdf-ebook";
+exports.desc = "Create an PDF (eBook)";
 exports.builder = {
   paperSize: {},
   theme: {
-    default: 'techbooster',
+    default: "techbooster",
   },
 };
 exports.handler = generatePDF;

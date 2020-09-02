@@ -1,4 +1,4 @@
-inherit: ['theme.yml']
+inherit: ["theme.yml"]
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
 bookname: opinionated-review-book
@@ -7,10 +7,10 @@ bookname: opinionated-review-book
 coverimage: cover.png
 
 # 書名
-booktitle: 'Opinionated Re:VIEW'
+booktitle: "Opinionated Re:VIEW"
 
 # 著者名。「, 」で区切って複数指定できる
-aut: ['Anonymous Reviewer']
+aut: ["Anonymous Reviewer"]
 # 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
 # 読みの指定はaut:の例を参照。
@@ -31,7 +31,7 @@ aut: ['Anonymous Reviewer']
 # a-csl, csl: 監修者
 # a-dsr, dsr: デザイナ
 # a-edt, edt: 編集者
-edt: ['Slicked Editor']
+edt: ["Slicked Editor"]
 # a-ill, ill: イラストレータ
 # a-lyr, lyr: 歌詞作成者
 # a-mdc, mdc: メタデータセットの一次的責任者
@@ -56,7 +56,7 @@ date: 2019-4-14
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [['2019-4-14 技術書典6版 v1.0.0']]
+history: [["2019-4-14 技術書典6版 v1.0.0"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016 Opinionated Re:VIEW
 rights: (C) 2017-2019 Super Reviewers

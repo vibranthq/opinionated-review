@@ -13,7 +13,6 @@
     "recursive-copy": "^2.0.10",
     "yargs": "^15.4.1"
   },
-  "devDependencies": {},
   "main": "src/cli.js",
   "bin": "src/cli.js",
   "private": true

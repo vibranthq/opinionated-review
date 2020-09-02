@@ -8,12 +8,12 @@ WORKDIR /app
 RUN git clone https://github.com/prh/rules.git prh-rules
 
 # review
-COPY Gemfile /app/
-RUN bundle install
+COPY Gemfile Gemfile.lock /app/
+RUN bundle install --deployment
 
 # opinionated-review
-COPY package.json /app/
-RUN yarn && yarn link
+COPY package.json yarn.lock /app/
+RUN yarn --production --frozen-lockfile && yarn link
 COPY src /app/src
 
 # assets
