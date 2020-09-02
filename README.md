@@ -186,3 +186,7 @@ Pull Request & Issue 大歓迎です。
 - [Re:VIEW catalog.yml](https://github.com/kmuto/review/blob/master/doc/catalog.ja.md)
 - [Re:VIEW FAQ TeX](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-tex.html)
 - [Re:VIEW FAQ Usage](https://review-knowledge-ja.readthedocs.io/ja/latest/faq/faq-usage.html)
+
+## 貢献
+
+See [Contribution Guide](./CONTRIBUTING.md).

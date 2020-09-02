@@ -21,7 +21,7 @@ test-lint: build
 
 test: test-pdf test-pdf-ebook test-epub test-lint
 
-publish: build test
+publish: build
 	docker push ${IMAGE}
 
 dive: build
