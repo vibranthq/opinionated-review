@@ -7,7 +7,7 @@
   "dependencies": {
     "execa": "^4.1.0",
     "fs-extra": "^9.0.1",
-    "js-yaml": "^3.14.0",
+    "js-yaml": "^3.14.1",
     "node-sass": "^4.14.1",
     "prh": "^5.4.4",
     "recursive-copy": "^2.0.11",
