@@ -1,4 +1,4 @@
-FROM vvakame/review:4.2
+FROM vvakame/review:5.1
 
 ENV CI true
 
