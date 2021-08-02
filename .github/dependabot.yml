@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/opinionated-review"
+  schedule:
+    interval: monthly
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: vvakame/review
+    versions:
+    - "5.0"
+- package-ecosystem: npm
+  directory: "/opinionated-review"
+  schedule:
+    interval: monthly
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
